@@ -1,0 +1,9 @@
+{
+  "name": "hospital-shift-scheduling",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "cd frontend && npm install && npx vite build",
+    "preview": "cd frontend && npm run preview"
+  }
+}

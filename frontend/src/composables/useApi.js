@@ -1,6 +1,6 @@
 import { ref, reactive } from 'vue';
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:9090/api';
+const API_BASE = import.meta.env.VITE_API_BASE || 'https://hospital-shift-scheduling-production-12b2.up.railway.app/api';
 
 export function useApi() {
   const loading = ref(false);

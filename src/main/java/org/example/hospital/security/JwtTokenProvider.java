@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class JwtTokenProvider implements InitializingBean {
 
-    @Value("${security.jwt.secret:${JWT_SECRET:change-me-to-a-256-bit-secret-string-in-production}}")
+    @Value("${security.jwt.secret:MyHospitalShiftSchedulingJWTSecretKey2026VeryLongAndSecureString}")
     private String secret;
 
     @Value("${security.jwt.expiration-minutes:60}")
@@ -27,6 +27,7 @@ public class JwtTokenProvider implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() {
+        System.out.println("JWT_SECRET length: " + secret.length() + ", value: " + secret.substring(0, Math.min(5, secret.length())) + "...");
         byte[] secretBytes = secret.getBytes(StandardCharsets.UTF_8);
         if (secretBytes.length < 32) {
             throw new IllegalStateException("JWT secret must be at least 32 bytes for HS256");

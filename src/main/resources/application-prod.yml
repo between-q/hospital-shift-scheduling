@@ -19,7 +19,7 @@ server:
 llm:
   api:
     base-url: ${LLM_BASE_URL:https://ark.cn-beijing.volces.com/api/v3}
-    key: ${LLM_API_KEY:ark-7c5a1fda-aea0-4e24-9f28-1e0faf3e451b-67fb7}
+    key: ${LLM_API_KEY:}
     model: ${LLM_MODEL:ep-20260811021418-cxvdz}
     max-tokens: ${LLM_MAX_TOKENS:1024}
     temperature: ${LLM_TEMPERATURE:0.7}

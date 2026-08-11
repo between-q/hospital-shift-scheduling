@@ -27,4 +27,4 @@ EXPOSE 9090
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
     CMD curl -f http://localhost:9090/api/health || exit 1
 
-ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -Dserver.port=${PORT:9090} -jar app.jar"]
+ENTRYPOINT ["bash", "-c", "java $JAVA_OPTS -Dserver.port=${PORT:-9090} -jar app.jar"]

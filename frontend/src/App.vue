@@ -153,7 +153,7 @@ import SwapRequestForm from './components/SwapRequestForm.vue';
 import ProfileView from './components/ProfileView.vue';
 
 const { api, token: authToken, API_BASE } = useApi();
-const WS_BASE = import.meta.env.VITE_WS_BASE || 'http://localhost:9090/ws';
+const WS_BASE = import.meta.env.VITE_WS_BASE || 'wss://hospital-shift-scheduling-production-12b2.up.railway.app/ws';
 
 // State
 const loading = ref(false);

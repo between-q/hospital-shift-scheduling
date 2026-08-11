@@ -4,6 +4,9 @@ spring:
     driver-class-name: ${SPRING_DATASOURCE_DRIVER-CLASS-NAME:org.postgresql.Driver}
     username: ${SPRING_DATASOURCE_USERNAME:postgres}
     password: ${SPRING_DATASOURCE_PASSWORD:postgres}
+    hikari:
+      jdbc-url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/hospital}
+      maximum-pool-size: 5
   jpa:
     hibernate:
       ddl-auto: update

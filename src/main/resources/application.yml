@@ -4,9 +4,6 @@ spring:
     driver-class-name: org.sqlite.JDBC
     username:
     password:
-    hikari:
-      jdbc-url: jdbc:sqlite:./hospital.db
-      maximum-pool-size: 1
   jpa:
     hibernate:
       ddl-auto: update

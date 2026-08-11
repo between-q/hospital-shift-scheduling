@@ -1,40 +1,13 @@
 spring:
-  datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/hospital}
-    driver-class-name: ${SPRING_DATASOURCE_DRIVER-CLASS-NAME:org.postgresql.Driver}
-    username: ${SPRING_DATASOURCE_USERNAME:postgres}
-    password: ${SPRING_DATASOURCE_PASSWORD:postgres}
-    hikari:
-      jdbc-url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/hospital}
-      maximum-pool-size: 5
   jpa:
     hibernate:
       ddl-auto: update
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
     open-in-view: false
 
 server:
   port: ${PORT:9090}
 
-llm:
-  api:
-    base-url: ${LLM_BASE_URL:https://ark.cn-beijing.volces.com/api/v3}
-    key: ${LLM_API_KEY:}
-    model: ${LLM_MODEL:}
-    max-tokens: ${LLM_MAX_TOKENS:1024}
-    temperature: ${LLM_TEMPERATURE:0.7}
-    timeout-seconds: ${LLM_TIMEOUT:60}
-
-security:
-  jwt:
-    secret: ${JWT_SECRET:change-me-to-a-256-bit-secret-string}
-    expiration-minutes: ${JWT_EXPIRATION_MINUTES:60}
-
 app:
-  cors:
-    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173,http://127.0.0.1:5173,http://localhost:5174,http://127.0.0.1:5174,http://localhost:4173,http://127.0.0.1:4173}
-  websocket:
-    allowed-origins: ${WS_ALLOWED_ORIGINS:http://localhost:5173,http://127.0.0.1:5173,http://localhost:5174,http://127.0.0.1:5174,http://localhost:4173,http://127.0.0.1:4173}
   init:
     admin:
       enabled: ${INIT_ADMIN_ENABLED:false}
@@ -43,11 +16,6 @@ app:
       full-name: ${INIT_ADMIN_FULL_NAME:System Admin}
   analytics:
     enabled: ${ANALYTICS_ENABLED:false}
-    datasource:
-      url: jdbc:sqlite:./hospital.db
-      driver-class-name: org.sqlite.JDBC
-      username:
-      password:
 
 logging:
   level:

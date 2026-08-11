@@ -1,23 +1,23 @@
 spring:
   datasource:
-    url: jdbc:sqlite:./hospital.db
-    driver-class-name: org.sqlite.JDBC
-    username:
-    password:
+    url: ${SPRING_DATASOURCE_URL:jdbc:sqlite:./hospital.db}
+    driver-class-name: ${SPRING_DATASOURCE_DRIVER-CLASS-NAME:org.sqlite.JDBC}
+    username: ${SPRING_DATASOURCE_USERNAME:}
+    password: ${SPRING_DATASOURCE_PASSWORD:}
+    hikari:
+      jdbc-url: ${SPRING_DATASOURCE_URL:jdbc:sqlite:./hospital.db}
+      driver-class-name: ${SPRING_DATASOURCE_DRIVER-CLASS-NAME:org.sqlite.JDBC}
   jpa:
     hibernate:
       ddl-auto: update
-    database-platform: org.hibernate.community.dialect.SQLiteDialect
-    properties:
-      hibernate:
-        format_sql: true
     open-in-view: false
   jackson:
     serialization:
       write-dates-as-timestamps: false
 
 server:
-  port: 9090
+  port: ${PORT:9090}
+
 coze:
   api:
     url: ${COZE_API_URL:http://localhost:8000/api/coze/chat}
@@ -36,7 +36,7 @@ llm:
 
 security:
   jwt:
-    secret: ${JWT_SECRET:change-me-to-a-256-bit-secret-string}
+    secret: ${JWT_SECRET:MyHospitalShiftSchedulingJWTSecretKey2026VeryLongAndSecureString}
     expiration-minutes: ${JWT_EXPIRATION_MINUTES:60}
 
 app:

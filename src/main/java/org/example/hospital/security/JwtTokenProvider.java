@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class JwtTokenProvider implements InitializingBean {
 
-    @Value("${security.jwt.secret}")
+    @Value("${JWT_SECRET:change-me-to-a-256-bit-secret-string-in-production}")
     private String secret;
 
     @Value("${security.jwt.expiration-minutes:60}")

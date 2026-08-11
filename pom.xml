@@ -41,11 +41,17 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
-		<!-- SQLite 驱动 -->
+		<!-- SQLite 驱动（本地开发） -->
 		<dependency>
 			<groupId>org.xerial</groupId>
 			<artifactId>sqlite-jdbc</artifactId>
 			<version>3.45.3.0</version>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- PostgreSQL 驱动（生产环境） -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<!-- Hibernate SQLite 方言 -->
